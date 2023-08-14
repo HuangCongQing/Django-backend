@@ -4,7 +4,7 @@
  * @Company(School): UCAS
  * @Email: 1756260160@qq.com
  * @Date: 2023-08-14 22:29:39
- * @LastEditTime: 2023-08-15 00:24:48
+ * @LastEditTime: 2023-08-15 00:40:40
  * @FilePath: /Django-backend/README.md
 -->
 # Django-backend
@@ -23,7 +23,7 @@ pip install django==3.2.19
 python -m django --version
 ```
 
-## 使用
+## 安装
 ```shell
 
 # 1 创建工程
@@ -32,7 +32,16 @@ django-admin startproject backend(工程名)
 
 # 2 创建项目app
 ## 我们就进入项目根目录，执行下面的命令。
-python manage.py startapp sales 
-
+python manage.py startapp sales(appname)
 
 ```
+
+## 运行
+```shell
+# 
+python manage.py migrate
+
+# 启动
+python manage.py runserver 0.0.0.0:8000
+```
+
