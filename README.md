@@ -30,6 +30,9 @@ python -m django --version
 django-admin startproject backend(工程名)
 
 
-# 2 创建app
+# 2 创建项目app
+## 我们就进入项目根目录，执行下面的命令。
+python manage.py startapp sales 
+
 
 ```
