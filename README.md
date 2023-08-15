@@ -4,7 +4,7 @@
  * @Company(School): UCAS
  * @Email: 1756260160@qq.com
  * @Date: 2023-08-14 22:29:39
- * @LastEditTime: 2023-08-16 00:43:49
+ * @LastEditTime: 2023-08-16 01:56:30
  * @FilePath: /Django-backend/README.md
 -->
 # Django-backend
@@ -43,5 +43,6 @@ python manage.py migrate
 
 # 启动
 python manage.py runserver 0.0.0.0:8000
+python manage.py runserver 127.0.0.1:8000
 ```
 
