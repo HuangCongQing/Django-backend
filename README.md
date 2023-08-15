@@ -4,7 +4,7 @@
  * @Company(School): UCAS
  * @Email: 1756260160@qq.com
  * @Date: 2023-08-14 22:29:39
- * @LastEditTime: 2023-08-15 02:13:02
+ * @LastEditTime: 2023-08-16 00:43:49
  * @FilePath: /Django-backend/README.md
 -->
 # Django-backend
@@ -38,7 +38,7 @@ python manage.py startapp sales(appname)
 
 ## 运行
 ```shell
-# 创建数据库& 数据库迁移
+# 创建数据库& 同步数据库
 python manage.py migrate
 
 # 启动

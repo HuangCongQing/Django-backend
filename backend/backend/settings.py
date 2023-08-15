@@ -26,11 +26,10 @@ SECRET_KEY = 'django-insecure-!x+5uj8k!+)-f+xi7622_5nck4o4jb4&((3i*24c7obh78kr)1
 DEBUG = True
 
 # 本地调试端口
-ALLOWED_HOSTS = ["127.0.0.1"]
+ALLOWED_HOSTS = ["127.0.0.1", "localhost"]
 
 
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -38,6 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # 加入下面这行添加应用）
+    'common.apps.CommonConfig',
 ]
 
 MIDDLEWARE = [
