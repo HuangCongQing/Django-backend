@@ -12,6 +12,8 @@ import requests, pprint
 params = {
     'action': 'list_customer',
 }
+
+# data不放在链接，params放在链接里面
 response = requests.get('http://localhost:8000/api/mgr/customers',
                          params=params)
 pprint.pprint(response.json())
