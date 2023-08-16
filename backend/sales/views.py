@@ -4,7 +4,7 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2023-08-15 00:31:44
-LastEditTime: 2023-08-16 22:08:38
+LastEditTime: 2023-08-16 22:19:46
 FilePath: /Django-backend/backend/sales/views.py
 '''
 from django.shortcuts import render
@@ -18,13 +18,43 @@ def listorders(request):
     return HttpResponse("下面是系统中所有的订单信息。。。")
 
 
-# 
+# 先定义好HTML模板
+html_template ='''
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+table {
+    border-collapse: collapse;
+}
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+</style>
+</head>
+    <body>
+        <table>
+        <tr>
+        <th>id</th>
+        <th>姓名</th>
+        <th>电话号码</th>
+        <th>地址</th>
+        </tr>
+        
+        %s
+        
+        
+        </table>
+    </body>
+</html>
+'''
+
 def listcustomers(request):
     # 返回一个 QuerySet 对象 ，包含所有的表记录
-    # 每条表记录都是是一个dict对象，
-    # key 是字段名，value 是 字段值
-    qs = Customer.objects.values() # 数据库名字
-
+    qs = Customer.objects.values()
 
     # 检查url中是否有参数phonenumber
     ph =  request.GET.get('phonenumber',None)
@@ -33,13 +63,14 @@ def listcustomers(request):
     if ph:
         qs = qs.filter(phonenumber=ph)
 
-    # 定义返回字符串
-    retStr = ''
+    # 生成html模板中要插入的html片段内容
+    tableContent = ''
     for customer in  qs:
+        tableContent += '<tr>'
+
         for name,value in customer.items():
-            retStr += f'{name} : {value} | '
+            tableContent += f'<td>{value}</td>'
 
-        # <br> 表示换行
-        retStr += '<br>'
+        tableContent += '</tr>'
 
-    return HttpResponse(retStr)
+    return HttpResponse(html_template%tableContent)
