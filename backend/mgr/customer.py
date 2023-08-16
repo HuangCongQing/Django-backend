@@ -4,7 +4,7 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2023-08-16 22:45:11
-LastEditTime: 2023-08-16 22:57:55
+LastEditTime: 2023-08-16 23:00:55
 FilePath: /Django-backend/backend/mgr/customer.py
 '''
 import json
@@ -40,7 +40,7 @@ def dispatcher(request):
     else:
         return JsonResponse({'ret': 1, 'msg': '不支持该类型http请求'})
 
-
+# 列出
 def listcustomers(request):
     # 返回一个 QuerySet 对象 ，包含所有的表记录(数据库)
     qs = Customer.objects.values()
@@ -50,3 +50,18 @@ def listcustomers(request):
     retlist = list(qs)
 
     return JsonResponse({'ret': 0, 'retlist': retlist})
+
+# 添加
+def addcustomer(request):
+    
+    info    = request.params['data']
+
+    # 从请求消息中 获取要添加客户的信息
+    # 并且插入到数据库中
+    # 返回值 就是对应插入记录的对象 
+    record = Customer.objects.create(name=info['name'] ,
+                            phonenumber=info['phonenumber'] ,
+                            address=info['address'])
+
+
+    return JsonResponse({'ret': 0, 'id':record.id})
