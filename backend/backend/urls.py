@@ -4,7 +4,7 @@ Author: HCQ
 Company(School): UCAS
 Email: 1756260160@qq.com
 Date: 2023-08-15 00:26:48
-LastEditTime: 2023-08-16 01:47:07
+LastEditTime: 2023-08-16 22:49:36
 FilePath: /Django-backend/backend/backend/urls.py
 '''
 """backend URL Configuration
@@ -27,6 +27,7 @@ from django.urls import path
 
 # 别忘了导入 listorders 函数
 from sales.views import listorders, listcustomers
+from mgr.customer import dispatcher
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -34,4 +35,7 @@ urlpatterns = [
     # 添加如下的路由记录
     path('sales/orders/', listorders),
     path('sales/custmoers/', listcustomers),
+
+    # 请求管理员
+    path('/api/mgr/customers', dispatcher)
 ]
