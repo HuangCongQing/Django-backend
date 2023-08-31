@@ -4,7 +4,7 @@
  * @Company(School): UCAS
  * @Email: 1756260160@qq.com
  * @Date: 2023-08-14 22:29:39
- * @LastEditTime: 2023-09-01 00:51:53
+ * @LastEditTime: 2023-09-01 00:56:59
  * @FilePath: /Django-backend/README.md
 -->
 # Django-backend
@@ -62,3 +62,6 @@ python manage.py startapp sales(appname) # 销售员
 python manage.py startapp mgr(appname) # 管理员
 
 ```
+
+### 测试API代码
+* [backend/test](backend/test)
