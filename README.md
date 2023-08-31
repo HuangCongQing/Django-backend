@@ -4,7 +4,7 @@
  * @Company(School): UCAS
  * @Email: 1756260160@qq.com
  * @Date: 2023-08-14 22:29:39
- * @LastEditTime: 2023-08-16 01:56:30
+ * @LastEditTime: 2023-09-01 00:51:53
  * @FilePath: /Django-backend/README.md
 -->
 # Django-backend
@@ -46,3 +46,19 @@ python manage.py runserver 0.0.0.0:8000
 python manage.py runserver 127.0.0.1:8000
 ```
 
+## demo1
+* video: https://www.bilibili.com/video/BV1AE41117Up/
+* docs: https://www.yuque.com/huangzhongqing/gyafdp/qa49l7eq128x35ov
+
+```shell
+
+# 1 创建工程
+django-admin startproject backend(工程名)
+
+
+# 2 创建项目app
+## 我们就进入项目根目录，执行下面的命令。
+python manage.py startapp sales(appname) # 销售员
+python manage.py startapp mgr(appname) # 管理员
+
+```
